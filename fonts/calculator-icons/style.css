@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'calculator-icons';
+  src:  url('fonts/calculator-icons.eot?jzv8p4');
+  src:  url('fonts/calculator-icons.eot?jzv8p4#iefix') format('embedded-opentype'),
+    url('fonts/calculator-icons.ttf?jzv8p4') format('truetype'),
+    url('fonts/calculator-icons.woff?jzv8p4') format('woff'),
+    url('fonts/calculator-icons.svg?jzv8p4#calculator-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'calculator-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.calc_moon:before {
+  content: "\1f31a";
+}
+.calc_sun:before {
+  content: "\1f31e";
+}

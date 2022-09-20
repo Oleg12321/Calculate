@@ -1,0 +1,212 @@
+$primary: #00b0d7;
+$accent: #ff6060;
+$dark: #001b2f;
+$light: #fff;
+$display_light: #fafafa;
+$display_dark: #00223a;
+$actiions_light: #e9f6ff;
+$actiions_dark: #001b2f;
+
+
+
+$fontSizeBtn: 1.5rem;
+$fontSizeText: 24px;
+
+$sizeClose: 20px;
+
+$borderRadiusCalc: 20px;
+
+$transition: all 0.3s ease-in-out;
+
+@mixin sizeMain($sizeWidth, $sizeHeight, $sizrRadius) {
+    width: $sizeWidth;
+    height: $sizeHeight;
+    border-radius: $sizrRadius;
+  }
+
+  @mixin colorContent($colorBackground: $backgroundColorMain, $colorText) {
+    background-color: $colorBackground;
+    color: $colorText;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    // Calc
+    .calculator {
+        position: relative;
+        box-shadow: 8px 32px 64px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        width: 320px;
+        border-radius: $borderRadiusCalc;
+        transition: $transition;
+
+        .calcalculator__display {
+            padding: 44px;
+            margin: -24px;
+            background-color: $display_light;
+            text-align: right;
+            transition: $transition;
+
+            .calcalculator__history {
+                font-size: $fontSizeText;
+                height: 33px;
+
+                & strong {
+                    font-weight: normal;
+                    color: $accent;
+                }
+            }
+
+            .calcalculator__total {
+                font-size: 32px;
+                font-weight: 600;
+                height: 42px;
+            }
+        }
+        .calcalculator__actions {
+            background-color: $actiions_light;
+            padding: 16px 16px 32px;
+            border-radius: $borderRadiusCalc;
+            font-size: $fontSizeText;
+            transition: $transition;
+
+            .calcalculator__row {
+                display: flex;
+                justify-content: space-between;
+
+                [data-type="0"] {
+                    padding: 0 86px;
+                }
+                .calcalculator__col {
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @include sizeMain(64px, 64px, 0);
+                }
+
+                & img {
+                    pointer-events: none;
+                }
+
+                .calcalculator__col_reset {
+                    color: $accent;
+                }
+
+                .calcalculator__col_action {
+                    color: $primary;
+                }
+            }
+        }
+
+        
+
+        .theme {
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            position: absolute;
+            cursor: pointer;
+            top: 16px;
+            left: 16px;
+            font-size: 30px;
+            color: $light;
+            transition: $transition;
+            @include sizeMain(35px, 40px, 0);
+            
+            i {
+                transition: $transition;
+            }
+
+            &_dark {
+                color: $dark;
+    
+            }
+    
+            &_dark i:first-child {
+                margin-left: calc(44px * -1);
+                
+            }
+    
+            .calc_sun {
+                height: 34px;
+            }
+    
+            
+        }
+    }
+
+
+    // Calc dark
+    .calculator_dark {
+        color: $light;
+        overflow: hidden;
+        transition: $transition;
+
+        .calcalculator__display {
+            background-color: $display_dark;
+            transition: $transition;
+        }
+
+        .calcalculator__actions {
+            background-color: $display_dark;
+            transition: $transition;
+        }
+        
+
+        .theme {
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            position: absolute;
+            cursor: pointer;
+            top: 16px;
+            left: 16px;
+            font-size: 30px;
+            color: $light;
+            transition: $transition;
+            @include sizeMain(35px, 40px, 0);
+            
+            i {
+                transition: $transition;
+            }
+
+            &_dark {
+                color: $dark;
+    
+            }
+    
+            &_dark i:first-child {
+                margin-left: calc(35px * -1);
+                
+            }
+    
+            .calc_sun {
+                height: 34px;
+            }
+    
+            
+        }
+    }
+    
+    
+}
+
+
+
+
+
